@@ -10,19 +10,24 @@ public class SezarSifreleme {
         System.out.println("bir metin giriniz");
         String girilenMetin = scanner.nextLine();
 
+        System.out.println("artırılacak birimi giriniz");
+        int girilenBirim = scanner.nextInt();
+
         StringBuilder yeniMetin = new StringBuilder();
         for (Character each : girilenMetin.toCharArray()) {
-            if (each <= 'z' && each >= 'a') {
-                if (each.equals('z')) {
-                    each = 'a';
-                } else {
-                    each++;
-                }
-            } else if (each <= 'Z' && each >= 'A') {
-                if (each.equals('Z')) {
-                    each = 'A';
-                } else {
-                    each++;
+            for (int i = 1; i <= girilenBirim; i++) {
+                if (each <= 'z' && each >= 'a') {
+                    if (each.equals('z')) {
+                        each = 'a';
+                    } else {
+                        each++;
+                    }
+                } else if (each <= 'Z' && each >= 'A') {
+                    if (each.equals('Z')) {
+                        each = 'A';
+                    } else {
+                        each++;
+                    }
                 }
             }
             yeniMetin.append(each);
